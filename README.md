@@ -1,16 +1,48 @@
 # flutter_web_example
 
-A new Flutter project.
+🔥🚀 I teach you how to create your first Web App with Flutter and use GitHub Actions to automatically deploy it to GitHub Pages every time you push to the repository.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+### 📚 Tutorial: https://www.youtube.com/watch?v=UAeoRJ-eTUo
 
-A few resources to get you started if this is your first Flutter project:
+### 🖥️ Demo: https://giancarlocode.github.io/flutter_web_example/#/
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Workflow
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+`.github/workflows/flutter_web.yaml`
+```yaml
+name: Flutter Web
+
+on:
+  push:
+    branches:
+      - master
+      
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v1
+      with:
+        channel: 'beta'
+        
+    - name: Enable Flutter web 
+      run: flutter config --enable-web
+      
+    - name: Install dependencies
+      run: flutter packages get
+      
+    - name: Build web
+      run: flutter build web
+      
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.token }}
+        publish_dir: ./build/web
+```
