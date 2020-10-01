@@ -1,6 +1,6 @@
 # flutter_web_example--An Amazing Flutter Project For Beginners 
 
-🔥🚀 In This Tutorial I Will Teach you how to create your first Web App Using Flutter📲 and use GitHub Actions to automatically deploy it to GitHub Pages every time you push to the repository.
+🔥🚀 In This Tutorial I Will Teach you How To Create Your First Web App Using Flutter📲 And Use GitHub Actions To Automatically Deploy It To GitHub Pages Every Time You Push To The Repository.
 
 
 ### 📚 Tutorial: https://www.youtube.com/watch?v=UAeoRJ-eTUo
